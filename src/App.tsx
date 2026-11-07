@@ -17,10 +17,12 @@ import { AuthModal } from './components/AuthModal';
 import { QuickTestModal } from './components/QuickTestModal';
 import { NoteReaderModal } from './components/NoteReaderModal';
 import { VideoPlayerModal } from './components/VideoPlayerModal';
+import { PremiumLoader } from './components/PremiumLoader';
 import { VIDEO_LECTURES } from './data/mockData';
 import { VideoLecture } from './types';
 
 export default function App() {
+  const [isLoading, setIsLoading] = useState(true);
   const [authModalOpen, setAuthModalOpen] = useState(false);
   const [authMode, setAuthMode] = useState<'signin' | 'signup'>('signup');
   const [quickTestOpen, setQuickTestOpen] = useState(false);
@@ -56,6 +58,11 @@ export default function App() {
   return (
     <div className="min-h-screen bg-[#FAFBFD] text-[#181E28] flex flex-col font-sans selection:bg-[#FFE8E8] selection:text-[#FF4D4D]">
       
+      {/* SECTION 0: Premium Calibration & Loader Screen upon Load/Reload */}
+      {isLoading && (
+        <PremiumLoader onComplete={() => setIsLoading(false)} />
+      )}
+
       {/* SECTION 1: Navigation bar */}
       <Navbar 
         onOpenAuth={handleOpenAuth} 
