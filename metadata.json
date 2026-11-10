@@ -1,6 +1,0 @@
-{
-  "name": "SynapseMed — Medical Education & Clinical Learning Platform",
-  "description": "Structured concept clearance notes, high-yield question banks, clinical mock tests, and performance analytics for medical students and exam candidates.",
-  "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
-}
